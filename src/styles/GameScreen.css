@@ -3,6 +3,27 @@
   flex-direction: column;
   gap: 2rem;
   animation: fadeIn 0.3s ease-in;
+  position: relative;
+}
+
+.back-btn {
+  position: absolute;
+  top: -3rem;
+  left: 0;
+  padding: 0.5em 1em;
+  background-color: transparent;
+  border: 1px solid #c8a2c8;
+  color: #c8a2c8;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.back-btn:hover {
+  border-color: #dda0dd;
+  color: #dda0dd;
+  background-color: rgba(200, 162, 200, 0.1);
 }
 
 @keyframes fadeIn {
@@ -83,7 +104,14 @@
   font-weight: 600;
 }
 
-.restart-btn {
+.game-over-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.restart-btn,
+.home-btn {
   padding: 1em 2em;
   font-size: 1.1rem;
   background-color: #3d2f47;
@@ -95,11 +123,13 @@
   font-weight: 600;
 }
 
-.restart-btn:hover {
+.restart-btn:hover,
+.home-btn:hover {
   background-color: #4a3857;
   transform: scale(1.05);
 }
 
-.restart-btn:active {
+.restart-btn:active,
+.home-btn:active {
   transform: scale(0.98);
 }

@@ -3,7 +3,7 @@ import { fetchQuestion } from '../services/triviaAPI';
 import QuestionCard from './QuestionCard';
 import '../styles/GameScreen.css';
 
-export default function GameScreen() {
+export default function GameScreen({ onBackHome }) {
   const [question, setQuestion] = useState(null);
   const [answers, setAnswers] = useState([]);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
@@ -73,15 +73,22 @@ export default function GameScreen() {
       <div className="game-over-screen">
         <h1>Game Over!</h1>
         <div className="final-score">Final Score: {score}</div>
-        <button className="restart-btn" onClick={handleRestart}>
-          Play Again
-        </button>
+        <div className="game-over-buttons">
+          <button className="restart-btn" onClick={handleRestart}>
+            Play Again
+          </button>
+          <button className="home-btn" onClick={onBackHome}>
+            Home
+          </button>
+        </div>
       </div>
     );
   }
 
   return (
     <div className="game-screen">
+      <button className="back-btn" onClick={onBackHome}>← Back</button>
+      
       <div className="game-header">
         <div className="score">Score: {score}</div>
         <div className="lives">
