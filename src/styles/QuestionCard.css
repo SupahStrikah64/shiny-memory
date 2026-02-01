@@ -1,0 +1,119 @@
+.question-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #3d2f47, #4a3857);
+  border-radius: 12px;
+  border: 1px solid #c8a2c8;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.question-text {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #dda0dd;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.answers-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.answer-btn {
+  padding: 1em;
+  font-size: 1rem;
+  background-color: #2d2433;
+  border: 2px solid #c8a2c8;
+  color: #dda0dd;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 500;
+  text-align: center;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.answer-btn:hover:not(:disabled) {
+  background-color: #3d2f47;
+  border-color: #dda0dd;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(200, 162, 200, 0.3);
+}
+
+.answer-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.answer-btn:disabled {
+  cursor: not-allowed;
+}
+
+.answer-btn.selected {
+  border-color: #dda0dd;
+  background-color: #3d2f47;
+}
+
+.answer-btn.correct {
+  border-color: #90ee90;
+  background-color: rgba(144, 238, 144, 0.1);
+  color: #90ee90;
+}
+
+.answer-btn.incorrect {
+  border-color: #ff6b6b;
+  background-color: rgba(255, 107, 107, 0.1);
+  color: #ff6b6b;
+}
+
+.feedback {
+  padding: 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+  font-size: 1.1rem;
+  animation: slideIn 0.3s ease-out;
+}
+
+.correct-feedback {
+  background-color: rgba(144, 238, 144, 0.1);
+  color: #90ee90;
+  border: 1px solid #90ee90;
+}
+
+.incorrect-feedback {
+  background-color: rgba(255, 107, 107, 0.1);
+  color: #ff6b6b;
+  border: 1px solid #ff6b6b;
+}
+
+@media (max-width: 768px) {
+  .answers-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .question-text {
+    font-size: 1.2rem;
+  }
+
+  .question-card {
+    padding: 1.5rem;
+  }
+}
