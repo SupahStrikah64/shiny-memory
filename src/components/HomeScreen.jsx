@@ -11,14 +11,14 @@ export default function HomeScreen({ onSelectMode }) {
       <div className="modes-container">
         <div className="mode-card" onClick={() => onSelectMode('single-player')}>
           <div className="mode-icon">🎮</div>
-          <h2>Single Player</h2>
+          <h2>High Score</h2>
           <p>Challenge yourself with 3 lives. How high can you score?</p>
           <button className="mode-btn">Play</button>
         </div>
 
         <div className="mode-card coming-soon">
-          <div className="mode-icon">👥</div>
-          <h2>Multiplayer</h2>
+          <div className="mode-icon">🥔</div>
+          <h2>Hot Potato</h2>
           <p>Compete with friends in real-time trivia battles</p>
           <button className="mode-btn" disabled>
             Coming Soon

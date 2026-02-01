@@ -1,7 +1,6 @@
 .home-screen {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
   animation: fadeIn 0.3s ease-in;
 }
 
@@ -14,9 +13,18 @@
   }
 }
 
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
 .home-header {
   text-align: center;
-  padding: 2rem 0;
+  padding: 1rem 0;
 }
 
 .home-header h1 {
@@ -35,7 +43,7 @@
 .modes-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .mode-card {
@@ -54,8 +62,9 @@
 
 .mode-card:hover:not(.coming-soon) {
   border-color: #dda0dd;
+  background: linear-gradient(135deg, #4a3857, #5a4867);
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(200, 162, 200, 0.3);
+  box-shadow: 0 8px 24px rgba(221, 160, 221, 0.4);
 }
 
 .mode-card.coming-soon {
@@ -65,6 +74,10 @@
 
 .mode-icon {
   font-size: 3rem;
+}
+
+.mode-card:hover:not(.coming-soon) .mode-icon {
+  animation: bounce 0.6s ease-in-out infinite;
 }
 
 .mode-card h2 {
